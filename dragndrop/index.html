@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Drag & Drop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <section id="s1">
+        <div class="layout">
+            <div class="personnage draggable" style="background-image: url('images/personnage.png');"></div>
+            <div class="parent">
+                <div class="div2 draggable" style="background-image: url('images/collier.png');"></div>
+                <div class="div3 draggable" style="background-image: url('images/haut.png');"></div>
+                <div class="div4 draggable" style="background-image: url('images/bas.png');"></div>
+                <div class="div5 draggable" style="background-image: url('images/sac.png');"></div>
+                <div class="div6 draggable" style="background-image: url('images/shoes.png');"></div>
+                <div class="div7 draggable"></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/draggabilly@3/dist/draggabilly.pkgd.min.js"></script>
+
+    <script>
+        var draggableElems = document.querySelectorAll('.draggable');
+        var draggies = [];
+        for (var i = 0; i < draggableElems.length; i++) {
+            var draggableElem = draggableElems[i];
+            var draggie = new Draggabilly(draggableElem, {});
+            draggies.push(draggie);
+        }
+    </script>
+
+</body>
+
+</html>
